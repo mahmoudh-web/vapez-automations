@@ -18,6 +18,8 @@ app.use(function (req, res, next) {
 app.use(express.json())
 
 // routes
+
+// update points
 app.post('/points', (req, res) => {
     console.log(req.body)
     res.status(200).send({ saved: true })
