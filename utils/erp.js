@@ -29,4 +29,10 @@ const getCustomers = async () => {
     return data
 }
 
+const getPoints = async (id) => {
+    const pointsTransactions = []
+
+
+}
+
 export { getCustomers }
