@@ -5,9 +5,9 @@
 
     tiers:
         bronze: lifetime purchases < £500, 100 points / £1
-        silver: lifetime purchases >= £500, 150 points / £1
-        gold: lifetime purchases >= £1000, 200 points / £1
-        platinum: lifetime purchases >= £2000, 300 points / £1
+        silver: lifetime purchases >= £500, 120 points / £1
+        gold: lifetime purchases >= £1000, 150 points / £1
+        platinum: lifetime purchases >= £2000, 200 points / £1
 
 
     process:
@@ -16,6 +16,8 @@
 */
 
 const addPoints = async ({ id, details }) => {
+    // retrieve invoice 
+
     // get existing balance and customer tier
 
     // update and store balance
