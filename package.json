@@ -14,7 +14,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "lodash-es": "^4.17.21",
-    "luxon": "^3.4.4"
+    "luxon": "^3.4.4",
+    "mariadb": "^3.3.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
