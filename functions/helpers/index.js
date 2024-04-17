@@ -35,4 +35,25 @@ const createError = async error => {
 	return data
 }
 
-export { getResource, createError }
+const savePoints = async ({ id, details, points, existing, currentTotal }) => {
+	const res = await axios({
+		method: 'PUT',
+		headers,
+		url: `${process.env.ERP_URL}resource/Customer/${id}`,
+		data: {
+			custom_pointz_transactions: [...existing, {
+				details,
+				points,
+				date: DateTime.local().toFormat("yyyy-MM-dd"),
+			}],
+			custom_points_total: currentTotal ? currentTotal + points : points
+		}
+	}).then(res => res.data.data)
+		.catch(err => {
+			console.log(err)
+		})
+
+	return res
+}
+
+export { getResource, createError, savePoints }
