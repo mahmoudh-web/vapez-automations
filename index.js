@@ -42,7 +42,7 @@ app.post("/redeem-points", async (req, res) => {
 	const { id, details, points } = req.body
 
 	// if data missing, create error
-	if (!id || !details) {
+	if (!id || !details || !points) {
 		console.log("missing data")
 		const saveError = await createError(req.body)
 		return res.status(200).json({ data: "Missing data" })
