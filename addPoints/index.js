@@ -17,7 +17,7 @@ import { getResource, savePoints } from "../functions/helpers/index.js"
 	points tier is stored in customer => custom_points_tier
 
 	tiers:
-		bronze: lifetime purchases < £500, 1 points / £1
+		bronze: lifetime purchases < £500, 10 points / £1
 		silver: lifetime purchases >= £500, 11 points / £1
 		gold: lifetime purchases >= £1000, 12 points / £1
 		platinum: lifetime purchases >= £2000, 15 points / £1
@@ -29,7 +29,7 @@ import { getResource, savePoints } from "../functions/helpers/index.js"
 */
 
 const pointTiers = {
-	Bronze: 1,
+	Bronze: 10,
 	Silver: 11,
 	Gold: 12,
 	Platinum: 15,
