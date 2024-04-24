@@ -38,7 +38,7 @@ const pointTiers = {
 const addPoints = async (id, details) => {
 	// get invoice
 	const invoice = await getResource({ resource: "Sales Invoice", id })
-	const { net_total, customer, name: invoiceId } = invoice
+	const { net_total, grand_total, customer, name: invoiceId } = invoice
 
 	// get customer
 	const customerDetails = await getResource({
@@ -54,7 +54,7 @@ const addPoints = async (id, details) => {
 
 	// calculate points using tier
 	const tierPoints = pointTiers[custom_points_tier]
-	const transactionPoints = Math.round(net_total * tierPoints)
+	const transactionPoints = Math.round(grand_total * tierPoints)
 
 	// // add points to customer
 	const add = await savePoints({
