@@ -40,6 +40,7 @@ const addPoints = async (id, details) => {
 	const invoice = await getResource({ resource: "Sales Invoice", id })
 	const { net_total, grand_total, customer, name: invoiceId } = invoice
 
+	console.log(details)
 	// get customer
 	const customerDetails = await getResource({
 		resource: "Customer",
