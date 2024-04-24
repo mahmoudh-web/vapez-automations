@@ -38,34 +38,35 @@ const pointTiers = {
 const addPoints = async (id, details) => {
 	// get invoice
 	const invoice = await getResource({ resource: "Sales Invoice", id })
-	const { net_total, grand_total, customer, name: invoiceId } = invoice
+	console.log(invoice)
+	// const { net_total, grand_total, customer, name: invoiceId } = invoice
 
 	// get customer
-	const customerDetails = await getResource({
-		resource: "Customer",
-		id: customer,
-	})
-	const {
-		custom_pointz_transactions,
-		custom_points_tier,
-		custom_points_total,
-		name: customerId,
-	} = customerDetails
+	// const customerDetails = await getResource({
+	// 	resource: "Customer",
+	// 	id: customer,
+	// })
+	// const {
+	// 	custom_pointz_transactions,
+	// 	custom_points_tier,
+	// 	custom_points_total,
+	// 	name: customerId,
+	// } = customerDetails
 
 	// calculate points using tier
-	const tierPoints = pointTiers[custom_points_tier]
-	const transactionPoints = Math.round(grand_total * tierPoints)
+	// const tierPoints = pointTiers[custom_points_tier]
+	// const transactionPoints = Math.round(grand_total * tierPoints)
 
 	// // add points to customer
-	const add = await savePoints({
-		id: customerId,
-		details,
-		points: transactionPoints,
-		existing: custom_pointz_transactions,
-		currentTotal: custom_points_total,
-	})
+	// const add = await savePoints({
+	// 	id: customerId,
+	// 	details,
+	// 	points: transactionPoints,
+	// 	existing: custom_pointz_transactions,
+	// 	currentTotal: custom_points_total,
+	// })
 
-	return add
+	return true
 }
 
 const redeemPoints = async (id, details, points) => {
